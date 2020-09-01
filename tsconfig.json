@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "baseUrl": "./packages",
+        "paths": {
+            "@ahoopen/core/*": [
+                "core/src/*"
+            ],
+            "@ahoopen/web/*": [
+                "web/src/*"
+            ]
+        }
+    },
+    "files": [],
+    "references": [
+        {
+            "path": "packages/core"
+        },
+        {
+            "path": "packages/web"
+        }
+    ]
+}

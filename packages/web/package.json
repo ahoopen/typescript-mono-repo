@@ -1,0 +1,25 @@
+{
+    "name": "@ahoopen/web",
+    "version": "2.6.1",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "directory": "packages/web",
+        "url": "https://github.com/ahoopen/typescript-mono-repo.git"
+    },
+    "scripts": {
+        "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+        "prepack": "yarn build",
+        "build": "yarn clean && tsc --build && cp \"./package.json\" ./dist/",
+        "test": "echo 'no test'",
+        "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0"
+    },
+    "dependencies": {
+        "react": "16.13.1"
+    },
+    "devDependencies": {
+        "@types/react": "16.9.48"
+    }
+}
