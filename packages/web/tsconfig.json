@@ -1,15 +1,12 @@
 {
+    "extends": "../../tsconfig.build.json",
     "compilerOptions": {
-        "target": "es5",
         "outDir": "./dist",
-        "module": "commonjs",
-        "jsx": "react",
-        "strict": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
         "composite": true
     },
+    "include": [
+        "src/**/*"
+    ],
     "references": []
 }
