@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "outDir": "./dist",
+    "composite": true,
+    "target": "es6",
     "module": "commonjs",
+    "moduleResolution": "node",
     "jsx": "react",
     "strict": true,
     "declaration": true,
@@ -10,6 +11,14 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }
