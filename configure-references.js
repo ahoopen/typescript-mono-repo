@@ -9,7 +9,19 @@ const exec = util.promisify(require('child_process').exec);
 const path = require('path');
 const isCI = require('is-ci');
 
-const config = JSON.parse(fs.readFileSync('tsconfig.json').toString());
+const loadConfig = (path) => {
+    const content = fs.readFileSync(path).toString();
+  
+    // strip comments
+    const data = content.replace(
+      /\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g,
+      (m, g) => (g ? '' : m),
+    );
+  
+    return JSON.parse(data);
+};
+
+const config = loadConfig('tsconfig.json');
 config.files = [];
 config.references = [];
 
@@ -33,9 +45,7 @@ config.references = [];
             config.references.push({
                 path: workspace.location,
             });
-            const workspaceConfig = JSON.parse(
-                fs.readFileSync(tsconfigPath).toString(),
-            );
+            const workspaceConfig = loadConfig(tsconfigPath);
             workspaceConfig.compilerOptions.composite = true;
             workspaceConfig.references = [];
             for (const dependency of workspace.workspaceDependencies) {
