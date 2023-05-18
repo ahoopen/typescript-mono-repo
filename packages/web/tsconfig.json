@@ -6,11 +6,14 @@
         "composite": true
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ],
     "references": [
         {
             "path": "../utils"
+        },
+        {
+            "path": "../core"
         }
     ]
 }
