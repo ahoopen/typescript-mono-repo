@@ -1,0 +1,20 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "types": [
+            "node",
+            "vitest/globals"
+        ]
+    },
+    "include": [
+        "../*.ts"
+    ],
+    "exclude": [
+        "../vite.config.ts"
+    ],
+    "references": [
+        {
+            "path": ".."
+        }
+    ]
+}

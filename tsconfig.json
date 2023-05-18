@@ -1,32 +1,43 @@
 {
-    "compilerOptions": {
-        "types": [
-            "node"
-        ],
-        "jsx": "react",
-        "baseUrl": "./packages",
-        "paths": {
-            "@ahoopen/core/*": [
-                "core/src/*"
-            ],
-            "@ahoopen/web/*": [
-                "web/src/*"
-            ],
-            "@ahoopen/utils/*": [
-                "utils/src/*"
-            ]
-        }
-    },
-    "files": [],
-    "references": [
-        {
-            "path": "packages/core"
-        },
-        {
-            "path": "packages/utils"
-        },
-        {
-            "path": "packages/web"
-        }
-    ]
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "composite": true,
+    "outDir": "./dist",
+    "rootDir": "./packages",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react",
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@ahoopen/core/*": [
+        "core/src/*"
+      ],
+      "@ahoopen/web/*": [
+        "web/src/*"
+      ],
+      "@ahoopen/utils/*": [
+        "utils/src/*"
+      ]
+    }
+  },
+  "include": [
+    "packages/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }
