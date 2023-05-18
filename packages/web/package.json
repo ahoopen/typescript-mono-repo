@@ -13,12 +13,11 @@
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
     "prepack": "yarn build",
     "build": "yarn clean && tsc --build && cp \"./package.json\" ./dist/",
-    "test": "yarn jest",
+    "test": "vitest",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "@ahoopen/utils": "1.0.0"
+    "react": "16.13.1"
   },
   "devDependencies": {
     "@types/react": "16.9.48"

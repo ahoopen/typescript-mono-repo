@@ -1,14 +1,19 @@
 {
-    "extends": "../../tsconfig.build.json",
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
         "outDir": "./dist",
-        "rootDir": "./src",
-        "composite": true
+        "rootDir": "./src"
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "src/*.spec.ts"
     ],
     "references": [
+        {
+            "path": "../core"
+        },
         {
             "path": "../utils"
         }
