@@ -17,8 +17,7 @@
     "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "@ahoopen/utils": "1.0.0"
+    "react": "16.13.1"
   },
   "devDependencies": {
     "@types/react": "16.9.48"
